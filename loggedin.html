@@ -1,0 +1,580 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+	    
+        <meta name ="server" content='IS-WEB4' />
+        <meta charset="utf-8">
+		<title>PirateMentor - Logged in</title>
+		<meta content="Microsoft Visual Studio 7.0" name="GENERATOR" />
+		<meta content="C#" name="CODE_LANGUAGE" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta content="JavaScript" name="vs_defaultClientScript" />
+		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema" />
+          <meta name="viewport" content="user-scalable=no, width=device-width,  initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">  
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <script src="Scripts/jquery-1.4.4.min.js"></script>
+		<link href="Stundvisi_Look.css?V=1_70" type="text/css" rel="stylesheet" />
+        <script src="Scripts/login.js"></script>
+        
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use-->
+        <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB_ZH_8QlEuIV9OCz-n0D7OOItNwusYyiI",
+            authDomain: "mentor-4b4ec.firebaseapp.com",
+            databaseURL: "https://mentor-4b4ec.firebaseio.com",
+            projectId: "mentor-4b4ec",
+            storageBucket: "mentor-4b4ec.appspot.com",
+            messagingSenderId: "568390830607",
+            appId: "1:568390830607:web:712064064dc10ecc"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        checkLoggedIn();
+        function checkLoggedIn() {
+              firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                console.log("logged in");
+                } else {
+                // No user is signed in
+                console.log("not logged in");
+                document.location.href="index.html";
+                }
+            });
+        }
+
+        </script>        
+        
+        
+        <script type="text/javascript">
+        
+        //Under certain curcomstances we can end up the the default page framed within im2. That can never happen so we must log-out of im2 and redirect to non-framed loginpage
+        var IM2Domain = 'https://im.infomentor.is';
+
+        $(document).ready(function () {
+            if (self !== top) {
+                document.location.href = IM2Domain + "/Authentication/Authentication/LogOut?loginMode=IM1";
+                parent.window.location.href = "/Production/Mentor/default.aspx";
+            }
+        });
+            
+        var analyticsId = 'UA-8506185-8';
+
+        if (analyticsId !== '') {
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', analyticsId]);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+        }
+        </script>
+
+
+        
+        
+
+	</head>
+	<body class="body sep login">
+	    
+        
+	
+		<div id="page">
+
+		<form name="mainForm" method="post" action="./" onsubmit="javascript:return WebForm_OnSubmit();" id="mainForm" AUTOCOMPLETE="off">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJOTgxMjQwMjYxD2QWAmYPZBYCAgEPZBYCZg9kFggCAQ9kFgQCAQ9kFhJmDw8WAh4EVGV4dAUMSW5uc2tyw6FuaW5nZGQCAQ8PFgIeB1Zpc2libGVoZGQCAg8PFgIfAWhkZAIEDw8WBB4MRXJyb3JNZXNzYWdlBRRWYW50YXIgbm90YW5kYW5hZm4gIR4HRGlzcGxheQsqKlN5c3RlbS5XZWIuVUkuV2ViQ29udHJvbHMuVmFsaWRhdG9yRGlzcGxheQJkZAIFDw8WBB8CBRJWYW50YXIgbHlraWxvcsOwICEfAwsrBAJkZAIGDw8WAh8ABQtOb3RhbmRhbmFmbmRkAgkPDxYCHwAFCUx5a2lsb3LDsGRkAgwPDxYCHwFnZBYCAgEPDxYCHwAFEEdsZXltdCBseWtpbG9yw7BkZAIODw8WAh8BaGRkAgMPFgIfAWgWBAICDw8WAh8CBQpWYW50YXIgUElOZGQCAw8PFgIfAAUdU2tyw6HDsHUgUElOIG7Dum1lcmnDsCDDvml0dDpkZAICD2QWAgIDDw8WAh8BZ2QWBAIBDw8WAh8ABS1BbGxpciBuZW1lbmR1ciBuw6FpIDxiciAvPiBzw61udW0gbWFya21pw7B1bSFkZAIFDxYEHgRocmVmBRhodHRwOi8vd3d3LmluZm9tZW50b3IuaXMeCWlubmVyaHRtbAURd3d3LmluZm9tZW50b3IuaXNkAgMPZBYMAgEPDxYCHwAFCEZyw6l0dGlyZGQCAw8PFgIfAAVES2VyZmlzdGrDs3JhbsOhbXNrZWnDsCBmeXJpciBza3JpZnN0b2Z1c3Rqw7NyYSBvZyByaXRhcmEsIGhhdXN0IDIwMTlkZAIFDw8WAh8ABQkxNC41LjIwMTlkZAIHDxYCHwFoZAIJDw8WAh8ABYgDJiMxNjA7IE7DoW1za2Vpw7Bpw7AgZXIgw6Z0bGHDsCBza3JpZnN0b2Z1c3Rqw7NydW0sIHJpdHVydW0gb2cgw75laW0gc2VtIHNqw6EgdW0gdXBwc2V0bmluZ3Ugw6EgTWVudG9yIGlubmFuIGh2ZXJzIHNrw7NsYS4gSMOhbWFya3NmasO2bGRpIMO+w6F0dHRha2VuZGEgZXIgdMOzbGYgZW4gbsOhbXNrZWnDsGnDsCB2ZXLDsHVyIGHDsGVpbnMgaGFsZGnDsCBlZiBuw6ZnIMO+w6F0dHRha2EgbsOmc3QuIMOBIMO+ZXNzdSBuw6Ftc2tlacOwaSBlciBmYXJpw7AgeWZpciBhbGxhIGFsbWVubmFyIHNrcsOhbmluZ2FyIG9nIHVwcHNldG5pbmd1IMOhIE1lbnRvci4gRmFyacOwIHZlcsOwdXIgbS5hLiB5ZmlyIHVwcHNldG5pbmd1IMOhIG7DvWp1IHNrw7NsYcOhcmksIG7DvWp1IGjDs3BhdHIuLi5kZAILDxYCHwQFZWh0dHBzOi8vd3d3LmluZm9tZW50b3IuaXMvMjAxOS8wNS8xNC9rZXJmaXN0am9yYW5hbXNrZWlkLWZ5cmlyLXNrcmlmc3RvZnVzdGpvcmEtb2ctcml0YXJhLWhhdXN0LTIwMTkvFgJmDw8WAh8ABQ1MZXNhIG1laXJhLi4uZGQCBA9kFgICAQ8WAh4LXyFJdGVtQ291bnRmZGQSi5/+ihQtlvri/VMsxbQcvcHBIQ==" />
+</div>
+
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="33C5DF59" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAATmB9Op9vZsY+mAuYev1pcAltz7opyNJXSrcI9jTx1+lwVPpHgdinivleVzI89iVA421KgxS1EZmzzNKriRE1ZDot9O/mI+dhY3iFmWcmhzBJxFgJ4=" />
+</div>
+	
+			
+
+<style type="text/css">
+ 
+    
+@media only screen and (max-width: 767px) 
+{
+ html, body {
+     height: 100%; 
+     overflow-x: hidden;
+ } 
+ .form.login {
+     padding: 10px;
+     height: 100%; 
+ }  
+ .form.login .item .field {
+     float: none;
+     display: block;
+     width: 100%;
+ }
+ #LoginText input {
+     width: 75% !important;
+     line-height: 28px;
+     height: 28px;   
+ }
+ .sidePanel {
+   display: none;
+ }
+ .LoginNewsPanel {
+   display: none;
+ }
+ #login_ascx_Image1 {
+     display: none;
+ }
+ .Login-Logo {
+     display: none;
+ }
+ .divider-purple {
+     display: none;
+ }
+ 
+ #MobileMaintenance {
+     display: block;
+     width: 95%;
+ }
+ 
+ 
+ .login #page
+ {
+     margin: 0 !important;
+     padding: 0 !important;
+     float: none !important;
+     position: static !important;
+     width: 100% !important;
+	height:100% !important;
+ }
+ input.btn {
+            height: 26px;
+        }
+        
+ .forgottenPass {
+     right: 0px;
+     width: 75%;
+ }
+ 
+ .pinlogin
+ {     
+    position: absolute;
+            left: 50%;
+            top: 30%;
+            -webkit-transform: translateX(-50%) translateY(-50%);            
+            -moz-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            width: 320px;
+            box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+            padding: 40px 30px;
+            box-sizing: border-box;
+    }
+
+ #ssoSelectorButton {
+    width: 71% !important;
+ }
+    
+}
+
+
+
+.btn {
+            text-decoration: none;
+            font-size: 12px;
+            padding: 0px 14px;
+            line-height: 28px;
+            display: inline-block;
+            border-radius: 5px;
+            color: #fff;
+            background: #609;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+        }    
+#login_ascx_btnLogin {
+  position: relative;
+  z-index: 100;
+}
+
+a.ssoSelector {
+    display: block !important;
+    text-align:center; 
+    vertical-align:middle;
+    margin-top: 20px;
+}
+    
+.Login-Logo {
+    width: 740px;
+    position:absolute;
+    top:-80px;
+    left: -25px;
+}
+    
+.Login-Logo img
+ {
+    position: relative;
+    left: 0;
+    height: 40px;
+ }
+ 
+hr.divider-purple {
+   border:1px solid #660099;
+    width: 740px;
+    
+    position:absolute;
+    top:-35px;
+    left: -25px;
+}
+    
+.Login-Line img
+ {
+    width: 100%;
+ }
+ 
+ .loginImageButton {
+     z-index: 1;
+ }
+ 
+ .js-hide {
+     display: none;
+ }
+ 
+ .linkbutton 
+ {     
+     color: #660099;
+     padding-top: 10px;
+     float: right;
+ }
+
+/* Alt Dialog
+-------------------------------------------------------------------- */
+
+.alt-login-dialog {
+    font-family: "Open Sans", Helvetica, sans-serif;
+    display: none;
+    opacity: 0;
+    overflow-x: auto;
+    z-index: 101;
+}
+.alt-login-dialog.on {
+    display: block;
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: .2s;
+}
+
+.alt-login-dialog, 
+.alt-login-dialog-curtain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.alt-login-dialog-curtain { 
+    background: none;
+    -webkit-transition: background .2s ease-in;
+    -moz-transition: background .2s ease-in;
+    -o-transition: background .2s ease-in;
+    -ms-transition: background .2s ease-in;
+    transition: background .2s ease-in;
+}
+
+.alt-login-dialog.on {
+    background: url('./images/login/opacity.png');
+}
+
+.alt-login-dialog-container {
+    width: 580px;
+    margin: 30px auto 60px;
+    background: white;
+    position: relative;
+    box-sizing: border-box;
+    box-shadow: 0 0 12px -3px #444;
+    border-radius: 2px;
+    border: 1px solid #7d7d7d;
+    max-width: 95% !important;
+}
+
+/* Head */
+.alt-login-dialog-head {
+    border-bottom: 1px solid #00A1EC;
+    padding: 20px;
+    margin-bottom: 25px;
+    position: relative;
+
+}
+
+.alt-login-dialog-header {
+    font-weight: 700;
+    font-size: 21px;
+}
+
+.alt-login-dialog-close-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+}
+
+.alt-login-dialog-close-button-cross {
+    height: 15px;
+    width: 15px;
+}
+
+/* Body */
+.alt-login-dialog-body {
+    padding: 0 20px 50px;
+}
+
+.alt-login-dialog-spacer {
+    border-bottom: 4px dotted #E1E1E1;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Login items */
+.alt-login-dialog-login-items-table {
+    border: 1px solid #CCCCCC;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.alt-login-dialog-currently-selected {
+    background: #EBF8FE;
+}
+
+.alt-login-dialog-login-image-cell,
+.alt-login-dialog-login-text-cell {
+    border: 1px solid #CCCCCC;
+}
+
+.alt-login-dialog-login-image-cell {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.alt-login-dialog-login-image {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    max-height: 100%;
+    padding: 1px 0;
+}
+        
+.alt-login-dialog-login-text-cell {
+    padding-left: 13px;
+}
+
+.idp-entry {
+    cursor: pointer;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Alt Dialog - end
+        -------------------------------------------------------------------- */
+</style>
+
+
+<div class="Login-Logo">
+    <img id="login_ascx_imgLogo" src="KerfisUtlit/Myndir/Logo/InfoMentor_RGB_Trans.png" style="border-width:0px;" />
+</div>
+	    
+<hr class="divider-purple" />
+
+<div id="login_ascx_Panel1">
+	
+
+<div id="login_ascx_unLoginBox" class="form login">
+    
+	<h2><span id="login_ascx_lblInnskraning">Logged in</span></h2>
+    
+    <p>You're logged in.</p>
+    <a href="#logout" onclick="logout();" class="btn" style="position: absolute;bottom:64px;">Logout</a>
+	
+
+    
+
+    
+    
+    
+</div>
+
+
+
+
+
+</div> 
+
+<div id="login_ascx_dSidePanel" class="sidePanel">
+	
+	
+    
+    <div id="login_ascx_pnlInfomentorImage" class="login-maintenance-image">
+	
+        <div style="padding-left: 16px;">
+            <h2><span id="login_ascx_lblAllStudentsMotto" style="position: absolute;top:34px">PirateMentor <br /> by nAZIXX</span> </h2>
+        </div>
+        
+        <img id="login_ascx_imgInfoMentor" src="images/HomePage/Login_Illustration3.png" style="border-width:0px;" />  
+        <div style="padding-left: 16px;">
+            <a href="piratementor.html" class="btn" style="position: absolute;bottom:64px;">Continue</a>
+        </div>
+
+    
+</div>
+</div>
+
+
+<!--<div id="login_ascx_divNewsPanelLarge" class="LoginNewsPanel clearfix">
+    <h2 class="LoginNewsHeader">
+        <span>
+            <span id="login_ascx_lblNewsHeader">Fréttir</span>
+        </span>
+    </h2>
+    <h3 class="LoginNewsHeader3">
+		<span id="login_ascx_lblNewsHeadline" style="font-weight:bold;">Kerfistjóranámskeið fyrir skrifstofustjóra og ritara, haust 2019</span>
+        <br/>
+        <span id="login_ascx_lblNewsDate" style="font-size:12px;font-weight:normal;">14.5.2019</span>
+    </h3>
+        
+    <p>
+        <span id="login_ascx_lblNewsContent">&#160; Námskeiðið er ætlað skrifstofustjórum, riturum og þeim sem sjá um uppsetningu á Mentor innan hvers skóla. Hámarksfjöldi þátttakenda er tólf en námskeiðið verður aðeins haldið ef næg þátttaka næst. Á þessu námskeiði er farið yfir alla almennar skráningar og uppsetningu á Mentor. Farið verður m.a. yfir uppsetningu á nýju skólaári, nýju hópatr...</span>
+    </p>
+    <p>
+        <a href="https://www.infomentor.is/2019/05/14/kerfistjoranamskeid-fyrir-skrifstofustjora-og-ritara-haust-2019/" id="login_ascx_aNewsReadMoreLink" class="NewsReadMoreLinkSmall" target="_blank"><span id="login_ascx_lblReadMore">Lesa meira...</span></a>
+    </p>
+</div>-->
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+    function areCookiesEnabled() {
+        var cookiesEnabled = (navigator.cookieEnabled) ? true : false;
+
+        if (typeof navigator.cookieEnabled == "undefined" && !cookiesEnabled) {
+            document.cookie = "testcookie";
+            cookiesEnabled = (document.cookie.indexOf("testcookie") != -1) ? true : false;
+        }
+
+        return cookiesEnabled;
+    }
+
+    function validate(evt) {
+        var theEvent = evt || window.event;
+        var key = theEvent.keyCode || theEvent.which;
+        if (key === 8 || key === 9) {
+            return;
+        }
+
+        if (key === 13) {
+            __doPostBack('login_ascx$lbtnPin', '');
+            return;
+        }
+
+        key = String.fromCharCode(key);
+        var regex = /[0-9]|\./;
+        if (!regex.test(key)) {
+            theEvent.returnValue = false;
+            if (theEvent.preventDefault) theEvent.preventDefault();
+        }
+    }
+
+    function openSsoSelection() {
+        let dialog = $('.alt-login-dialog');
+        dialog.addClass('on');
+    }
+
+    function closeSsoSelection() {
+        let dialog = $('.alt-login-dialog');
+        dialog.removeClass('on');
+    }
+
+    $(document).ready(function () {
+        if ($('.ssoSelectorParent').length) {
+            $('.login').addClass('login-sso');
+        }
+
+        if (!areCookiesEnabled()) {
+            $('#lblNoCookiesEnabledMessage').removeClass('js-hide');
+        }
+
+        $('#ssoSelectorButton').click(function(event){
+            openSsoSelection();
+            event.preventDefault();
+        });
+
+        $('.alt-login-dialog-close-button').click(function (event) {
+            closeSsoSelection();
+            event.preventDefault();
+        });  
+
+        $('.idp-entry').click(function (event) {
+            let number = $(this).find("input[id$='number']").val();
+            let url = $(this).find("input[id$='url']").val();
+            document.cookie = "Im1_Ck_LastUsedIdp=" + number;
+            location.href = url; 
+        });
+
+        $(document).keypress(function (e) {
+            if (e.which == 13) {
+                let focus = $(':focus');
+                if (focus.hasClass('idp-entry')) {
+                    let number = focus.find("input[id$='number']").val();
+                    let url = focus.find("input[id$='url']").val();
+                    document.cookie = "Im1_Ck_LastUsedIdp=" + number;
+                    location.href = url; 
+                }
+            }
+        });
+    });
+</script>
+
+
+			
+			<div style="display: none;">
+				
+			</div>
+				
+		
+
+		</div>
+		
+	</body>
+</html>
